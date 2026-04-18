@@ -83,10 +83,12 @@ export default function CardGame() {
         >
           {/* ---- BACK (default, shown first) ---- */}
           <div
-            className="backface-hidden card-glow absolute inset-0 overflow-hidden rounded-[28px] border border-amber-400/40"
+            className="backface-hidden rotate-y-0 card-glow absolute inset-0 overflow-hidden rounded-[28px] border border-amber-400/40"
             style={{
               background:
                 "radial-gradient(ellipse at 50% 0%, #f5b942 0%, #b8791f 35%, #5a2d00 75%, #2a1300 100%)",
+              opacity: flipped ? 0 : 1,
+              transition: "opacity 0.1s linear 0.3s",
             }}
           >
             {/* bottle-cap ridges */}
@@ -162,6 +164,8 @@ export default function CardGame() {
                 "linear-gradient(180deg, #fff7dd 0%, #fff7dd 22%, #f9d37a 22%, #e09a1c 55%, #8a4c0a 100%)",
               boxShadow:
                 "0 30px 60px -10px rgba(0,0,0,0.7), inset 0 2px 0 rgba(255,255,255,0.5)",
+              opacity: flipped ? 1 : 0,
+              transition: "opacity 0.1s linear 0.3s",
             }}
           >
             {/* foam texture */}

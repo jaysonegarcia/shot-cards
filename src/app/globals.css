@@ -34,16 +34,25 @@ body {
 /* 3D flip helpers */
 .preserve-3d {
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 .backface-hidden {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  /* iOS Safari needs each face to have its own 3D context */
+  will-change: transform;
+}
+.rotate-y-0 {
+  transform: rotateY(0deg) translateZ(0);
+  -webkit-transform: rotateY(0deg) translateZ(0);
 }
 .rotate-y-180 {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg) translateZ(0);
+  -webkit-transform: rotateY(180deg) translateZ(0);
 }
 .perspective-1400 {
   perspective: 1400px;
+  -webkit-perspective: 1400px;
 }
 
 /* Bubbles rising inside the card */
