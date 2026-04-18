@@ -75,22 +75,36 @@ export default function CardGame() {
           type="button"
           onClick={handleClick}
           animate={{ rotateY: flipped ? 180 : 0 }}
-          transition={{ duration: 0.75, ease: [0.2, 0.8, 0.2, 1] }}
+          transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           whileHover={{ y: -6, scale: 1.015 }}
           whileTap={{ scale: 0.97 }}
+          style={{ transformPerspective: 1400, willChange: "transform" }}
           className="preserve-3d relative h-[460px] w-[320px] cursor-pointer select-none rounded-[28px] outline-none sm:h-[520px] sm:w-[360px]"
           aria-label={flipped ? "Tap to draw next card" : "Tap to reveal card"}
         >
           {/* ---- BACK (default, shown first) ---- */}
           <div
-            className="backface-hidden rotate-y-0 card-glow absolute inset-0 overflow-hidden rounded-[28px] border border-amber-400/40"
+            className="backface-hidden rotate-y-0 absolute inset-0 overflow-hidden rounded-[28px] border border-amber-400/40"
             style={{
               background:
                 "radial-gradient(ellipse at 50% 0%, #f5b942 0%, #b8791f 35%, #5a2d00 75%, #2a1300 100%)",
+              boxShadow:
+                "0 30px 60px -10px rgba(0,0,0,0.7), inset 0 2px 0 rgba(255,255,255,0.15)",
               opacity: flipped ? 0 : 1,
-              transition: "opacity 0.1s linear 0.3s",
+              transition: "opacity 0.22s cubic-bezier(0.4, 0, 0.2, 1) 0.38s",
             }}
           >
+            {/* glow overlay (opacity-pulses instead of box-shadow keyframes — cheaper on iOS) */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -inset-4 rounded-[36px] glow-pulse"
+              style={{
+                background:
+                  "radial-gradient(circle at 50% 50%, rgba(245,185,66,0.45), transparent 65%)",
+                filter: "blur(22px)",
+                zIndex: -1,
+              }}
+            />
             {/* bottle-cap ridges */}
             <div
               className="absolute inset-2 rounded-[22px]"
@@ -165,7 +179,7 @@ export default function CardGame() {
               boxShadow:
                 "0 30px 60px -10px rgba(0,0,0,0.7), inset 0 2px 0 rgba(255,255,255,0.5)",
               opacity: flipped ? 1 : 0,
-              transition: "opacity 0.1s linear 0.3s",
+              transition: "opacity 0.26s cubic-bezier(0.4, 0, 0.2, 1) 0.42s",
             }}
           >
             {/* foam texture */}
