@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0400;
+  --foreground: #fff7e5;
+  --beer-dark: #3a1d00;
+  --beer-amber: #b8791f;
+  --beer-gold: #f5b942;
+  --beer-foam: #fff6dd;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -10%, #4a2500 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 50% 110%, #2a1400 0%, transparent 60%),
+    linear-gradient(180deg, #160a00 0%, #050200 100%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* 3D flip helpers */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.perspective-1400 {
+  perspective: 1400px;
+}
+
+/* Bubbles rising inside the card */
+@keyframes rise {
+  0% {
+    transform: translateY(20%) scale(0.8);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-140%) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* Background drifting bubbles in the whole scene */
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.9);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(var(--dx, 20px), -100vh, 0) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    filter: brightness(1.15) saturate(1.1);
+  }
+}
+
+@keyframes foamWave {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-8px);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-1.2deg);
+  }
+  75% {
+    transform: rotate(1.2deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(245, 185, 66, 0.0),
+      0 30px 60px -10px rgba(0, 0, 0, 0.7),
+      inset 0 2px 0 rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 60px 6px rgba(245, 185, 66, 0.35),
+      0 30px 60px -10px rgba(0, 0, 0, 0.7),
+      inset 0 2px 0 rgba(255, 255, 255, 0.15);
+  }
+}
+
+@keyframes hintBlink {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card-glow {
+  animation: pulseGlow 3.2s ease-in-out infinite;
+}
+
+.hint-blink {
+  animation: hintBlink 1.6s ease-in-out infinite;
+}
+
+.shimmer {
+  animation: shimmer 2.4s ease-in-out infinite;
+}
+
+.foam-wave {
+  animation: foamWave 4s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spinSlow 28s linear infinite;
+}
