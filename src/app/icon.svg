@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5a2d00"/>
+      <stop offset="1" stop-color="#1a0800"/>
+    </linearGradient>
+    <linearGradient id="beer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbd17b"/>
+      <stop offset="1" stop-color="#8a4c0a"/>
+    </linearGradient>
+    <linearGradient id="foam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#fff0c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect width="64" height="64" rx="14" fill="none" stroke="#f5b942" stroke-opacity="0.45" stroke-width="1.5"/>
+
+  <!-- Handle -->
+  <path d="M44 26 h6 a5 5 0 0 1 5 5 v6 a5 5 0 0 1 -5 5 h-6 v-4 h4 a3 3 0 0 0 3 -3 v-2 a3 3 0 0 0 -3 -3 h-4 z"
+        fill="none" stroke="#2b1500" stroke-width="2"/>
+
+  <!-- Mug body -->
+  <rect x="11" y="22" width="34" height="30" rx="3" fill="url(#beer)" stroke="#2b1500" stroke-width="2"/>
+
+  <!-- Foam -->
+  <path d="M8 24 c3 -6 9 -6 12 -2 c3 -5 10 -5 13 -1 c3 -5 9 -5 12 0 c3 -4 8 -3 8 2 v4 h-45 z"
+        fill="url(#foam)" stroke="#2b1500" stroke-width="2"/>
+
+  <!-- Highlight -->
+  <rect x="16" y="30" width="3" height="18" rx="1.5" fill="#ffe6a8" opacity="0.85"/>
+
+  <!-- Bubbles -->
+  <circle cx="28" cy="36" r="1.8" fill="#fff0c8" opacity="0.9"/>
+  <circle cx="35" cy="42" r="1.4" fill="#fff0c8" opacity="0.9"/>
+  <circle cx="39" cy="32" r="1.2" fill="#fff0c8" opacity="0.9"/>
+</svg>

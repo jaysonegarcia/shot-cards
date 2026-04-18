@@ -142,14 +142,14 @@ export default function CardGame() {
               </div>
             </div>
 
-            {/* corner stamps */}
-            <div className="absolute left-4 top-4 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-100/60">
+            {/* corner stamps (inside inner panel) */}
+            <div className="absolute left-8 top-8 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-100/60">
               Est. Inuman
             </div>
-            <div className="absolute right-4 top-4 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-100/60">
+            <div className="absolute right-8 top-8 text-[10px] font-bold uppercase tracking-[0.3em] text-amber-100/60">
               50+ cards
             </div>
-            <div className="absolute bottom-4 left-0 right-0 text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-amber-100/50">
+            <div className="absolute bottom-8 left-0 right-0 text-center text-[10px] font-semibold uppercase tracking-[0.35em] text-amber-100/50">
               Drink Responsibly
             </div>
           </div>
