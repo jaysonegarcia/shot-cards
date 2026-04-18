@@ -21,7 +21,7 @@ export default function Home() {
         <div className="text-[10px] font-bold uppercase tracking-[0.6em] text-amber-200/60">
           Filipino Edition
         </div>
-        <h1 className="mt-1 bg-gradient-to-b from-amber-100 via-amber-300 to-amber-600 bg-clip-text text-3xl font-black tracking-wide text-transparent drop-shadow sm:text-4xl">
+        <h1 className="mt-1 bg-gradient-to-b from-amber-100 via-amber-300 to-amber-600 bg-clip-text text-3xl font-black tracking-wide text-transparent sm:text-4xl">
           SHOT CARDS
         </h1>
       </div>
