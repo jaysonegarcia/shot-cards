@@ -60,15 +60,6 @@ src/
     └── cards.ts          # all card content
 ```
 
-## Deployment (GitHub Pages)
-
-This repo is configured for static export to GitHub Pages at `/shot-cards/`.
-
-1. Enable Pages in repo **Settings → Pages → Source: GitHub Actions**.
-2. Go to the **Actions** tab → **Deploy Next.js site to Pages** → **Run workflow**.
-
-Deployment is manual-only (`workflow_dispatch`). Nothing deploys on push.
-
 ## Credits
 
 Card content adapted from a Filipino shot-card deck (Beer Night edition).
