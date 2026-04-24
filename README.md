@@ -64,4 +64,4 @@ src/
 
 Card content adapted from a Filipino shot-card deck (Beer Night edition).
 
-Built by Jayson Garcia.
+Built by [Jayson Garcia](https://github.com/jaysonegarcia).

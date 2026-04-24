@@ -30,7 +30,17 @@ export default function Home() {
 
       <div className="pointer-events-none absolute bottom-4 left-0 right-0 flex flex-col items-center gap-1 text-center text-[10px] uppercase tracking-[0.35em] text-amber-200/40">
         <span>Please drink responsibly · 18+</span>
-        <span className="text-amber-200/60">Built by Jayson Garcia</span>
+        <span className="text-amber-200/60">
+          Built by{" "}
+          <a
+            href="https://github.com/jaysonegarcia"
+            target="_blank"
+            rel="noreferrer"
+            className="pointer-events-auto underline-offset-4 hover:text-amber-200 hover:underline"
+          >
+            Jayson Garcia
+          </a>
+        </span>
       </div>
     </main>
   );
